@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Jan Kai Marek\\Downloads\\template_rx\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jan Kai Marek\\Downloads\\template_rx\\uart_rx.vhd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:uart_rx.vhd||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jan Kai Marek\\Downloads\\template_rx\\uart_rx_fsm.vhd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:uart_rx_fsm.vhd||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jan Kai Marek\\Downloads\\template_rx\\testbench.vhd||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:testbench.vhd||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jan Kai Marek\\Downloads\\template_rx\\uart.sh||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:uart.sh||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "uart.sh",
+              "DocumentMoniker": "C:\\Users\\Jan Kai Marek\\Downloads\\template_rx\\uart.sh",
+              "RelativeDocumentMoniker": "uart.sh",
+              "ToolTip": "C:\\Users\\Jan Kai Marek\\Downloads\\template_rx\\uart.sh",
+              "RelativeToolTip": "uart.sh",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-26T10:20:59.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "testbench.vhd",
+              "DocumentMoniker": "C:\\Users\\Jan Kai Marek\\Downloads\\template_rx\\testbench.vhd",
+              "RelativeDocumentMoniker": "testbench.vhd",
+              "ToolTip": "C:\\Users\\Jan Kai Marek\\Downloads\\template_rx\\testbench.vhd",
+              "RelativeToolTip": "testbench.vhd",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQISURBVDhPrZTLb5RVGMZ/7/kuM\u002B20Q2kLtikUolUMlyAxGkKiIdFgoq4U4sq4YKN/gLpz4X9gSHSjwZ0JkoikEsvNppSbSo2UwtgGKL1Pp537d5nvdlxMqSnGnU9ycs7ivL88T97zHuE/tGP7a51H37nwSRDwOvD5ia/U2Sfv/Etaa3l8bm/bKh2b\u002Bze9d/RUf3vbzje9Bh8GAf1hAFECAhNKOHHn7pfDub\u002B\u002Bnc3nxzytk41AQAAOH/6oZ2Dg1YP79h470gjlbc\u002BXbZ4HgQ9hAFEESQwIoWHoe5atz1wZ/XjEdZZu5nLfORuAx4\u002Bf/OCNt95/V4kcaATS67moWhVqdXAd8F0IQ9BNl4gCZRArUz8UVR69OPTpyfHxr688BhrH3v1h8NldvLitT7KWhRgGGAYoBWKAYYKhmruZglQaNneinn5GOhuOu3thZrE2Mz90/jHQnH9E6XxR\u002Bg69otm1W8i2QSkD7VmolMFxwfUgCSGV0nRvgRbbZ/TSFH/\u002BOq/L5WK4nhcw0Xp2ZVH2Dg3CzLTm5UOwfZvg\u002BVDugNpa5LStUYnP9OQSZ366z\u002Bx0AcvOJEoybku6X5Ik0QDGSwc\u002BOxI1ZH8UQmERHk034/b2CVu2QrYdOjtilhdW\u002BGUwx8VzkxTyFUQpDKslSIz0MPbmWxlrIMm0PK\u002BV1nqWBCQBHcPKAgz/DIOnYWEGQt9j8FSOb764wdXhBzg1D6UUYpggto6jsNWMpS2JlQAoSB4CoEF0s5OhD/cn4PZvMDy0ytnvJ1iaL5MkGlGq2WqxAFvChtsTR8lAub7TBlBxkiygNSCIBrUGTTSUSpDPB8RR3HSlBMQEw0JUCtGGEUarPbF2X8huevAcYCrXK9TUmkONoLU0\u002BRoaDXBdDSLNN4TZdCZplNgISkWx3yUYO0zoATapyanBkhfmVwGStaWTJjTwm9B1kLIBG0UKU1qp\u002BzN\u002BmFTrID4QAbFRLN2p\u002BGGy0NrWvafF7u5CC2sGsWxwnBL5xZVmVCwM1YJSaVZq1yrl\u002Bt2cJv5dkFvAOFAwoqgSV6q5O74Xjdkt2T2ZdG\u002BvRommOR2eV2V1uQSYGNKKiCSLpXMFP8hPaC1XRbgO3AbmgNgAiJO6LlVuzOSXx4btVNf2TKZ/h8K2lCE0XIdKuYaStA7jUpAvX5iJ4vofIsaICFeBiTh2F5aLp4NSdQTjn6GBIFwqrhYnLydadDrV1W\u002BZHdmG1xCn5mjHn6wVqtemEt0YFTEvAdeBqTCq5IvVy0EQ5gE2AgHCKO/W6nM3G0E8jTL7dGQ9VSjdqq3Wbg4i/CiizgNjwFypOlJxvFzcCObW69c/2I0SLLPbyrbt29XRfnB/GLmrWof3gGLdGfcdPxcBOgiXnyz8//U3PvwSqDnynrEAAAAASUVORK5CYII=",
+              "WhenOpened": "2025-04-26T10:20:46.277Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "uart_rx_fsm.vhd",
+              "DocumentMoniker": "C:\\Users\\Jan Kai Marek\\Downloads\\template_rx\\uart_rx_fsm.vhd",
+              "RelativeDocumentMoniker": "uart_rx_fsm.vhd",
+              "ToolTip": "C:\\Users\\Jan Kai Marek\\Downloads\\template_rx\\uart_rx_fsm.vhd",
+              "RelativeToolTip": "uart_rx_fsm.vhd",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAARAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQISURBVDhPrZTLb5RVGMZ/7/kuM\u002B20Q2kLtikUolUMlyAxGkKiIdFgoq4U4sq4YKN/gLpz4X9gSHSjwZ0JkoikEsvNppSbSo2UwtgGKL1Pp537d5nvdlxMqSnGnU9ycs7ivL88T97zHuE/tGP7a51H37nwSRDwOvD5ia/U2Sfv/Etaa3l8bm/bKh2b\u002Bze9d/RUf3vbzje9Bh8GAf1hAFECAhNKOHHn7pfDub\u002B\u002Bnc3nxzytk41AQAAOH/6oZ2Dg1YP79h470gjlbc\u002BXbZ4HgQ9hAFEESQwIoWHoe5atz1wZ/XjEdZZu5nLfORuAx4\u002Bf/OCNt95/V4kcaATS67moWhVqdXAd8F0IQ9BNl4gCZRArUz8UVR69OPTpyfHxr688BhrH3v1h8NldvLitT7KWhRgGGAYoBWKAYYKhmruZglQaNneinn5GOhuOu3thZrE2Mz90/jHQnH9E6XxR\u002Bg69otm1W8i2QSkD7VmolMFxwfUgCSGV0nRvgRbbZ/TSFH/\u002BOq/L5WK4nhcw0Xp2ZVH2Dg3CzLTm5UOwfZvg\u002BVDugNpa5LStUYnP9OQSZ366z\u002Bx0AcvOJEoybku6X5Ik0QDGSwc\u002BOxI1ZH8UQmERHk034/b2CVu2QrYdOjtilhdW\u002BGUwx8VzkxTyFUQpDKslSIz0MPbmWxlrIMm0PK\u002BV1nqWBCQBHcPKAgz/DIOnYWEGQt9j8FSOb764wdXhBzg1D6UUYpggto6jsNWMpS2JlQAoSB4CoEF0s5OhD/cn4PZvMDy0ytnvJ1iaL5MkGlGq2WqxAFvChtsTR8lAub7TBlBxkiygNSCIBrUGTTSUSpDPB8RR3HSlBMQEw0JUCtGGEUarPbF2X8huevAcYCrXK9TUmkONoLU0\u002BRoaDXBdDSLNN4TZdCZplNgISkWx3yUYO0zoATapyanBkhfmVwGStaWTJjTwm9B1kLIBG0UKU1qp\u002BzN\u002BmFTrID4QAbFRLN2p\u002BGGy0NrWvafF7u5CC2sGsWxwnBL5xZVmVCwM1YJSaVZq1yrl\u002Bt2cJv5dkFvAOFAwoqgSV6q5O74Xjdkt2T2ZdG\u002BvRommOR2eV2V1uQSYGNKKiCSLpXMFP8hPaC1XRbgO3AbmgNgAiJO6LlVuzOSXx4btVNf2TKZ/h8K2lCE0XIdKuYaStA7jUpAvX5iJ4vofIsaICFeBiTh2F5aLp4NSdQTjn6GBIFwqrhYnLydadDrV1W\u002BZHdmG1xCn5mjHn6wVqtemEt0YFTEvAdeBqTCq5IvVy0EQ5gE2AgHCKO/W6nM3G0E8jTL7dGQ9VSjdqq3Wbg4i/CiizgNjwFypOlJxvFzcCObW69c/2I0SLLPbyrbt29XRfnB/GLmrWof3gGLdGfcdPxcBOgiXnyz8//U3PvwSqDnynrEAAAAASUVORK5CYII=",
+              "WhenOpened": "2025-04-26T10:20:22.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "uart_rx.vhd",
+              "DocumentMoniker": "C:\\Users\\Jan Kai Marek\\Downloads\\template_rx\\uart_rx.vhd",
+              "RelativeDocumentMoniker": "uart_rx.vhd",
+              "ToolTip": "C:\\Users\\Jan Kai Marek\\Downloads\\template_rx\\uart_rx.vhd",
+              "RelativeToolTip": "uart_rx.vhd",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAgAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQISURBVDhPrZTLb5RVGMZ/7/kuM\u002B20Q2kLtikUolUMlyAxGkKiIdFgoq4U4sq4YKN/gLpz4X9gSHSjwZ0JkoikEsvNppSbSo2UwtgGKL1Pp537d5nvdlxMqSnGnU9ycs7ivL88T97zHuE/tGP7a51H37nwSRDwOvD5ia/U2Sfv/Etaa3l8bm/bKh2b\u002Bze9d/RUf3vbzje9Bh8GAf1hAFECAhNKOHHn7pfDub\u002B\u002Bnc3nxzytk41AQAAOH/6oZ2Dg1YP79h470gjlbc\u002BXbZ4HgQ9hAFEESQwIoWHoe5atz1wZ/XjEdZZu5nLfORuAx4\u002Bf/OCNt95/V4kcaATS67moWhVqdXAd8F0IQ9BNl4gCZRArUz8UVR69OPTpyfHxr688BhrH3v1h8NldvLitT7KWhRgGGAYoBWKAYYKhmruZglQaNneinn5GOhuOu3thZrE2Mz90/jHQnH9E6XxR\u002Bg69otm1W8i2QSkD7VmolMFxwfUgCSGV0nRvgRbbZ/TSFH/\u002BOq/L5WK4nhcw0Xp2ZVH2Dg3CzLTm5UOwfZvg\u002BVDugNpa5LStUYnP9OQSZ366z\u002Bx0AcvOJEoybku6X5Ik0QDGSwc\u002BOxI1ZH8UQmERHk034/b2CVu2QrYdOjtilhdW\u002BGUwx8VzkxTyFUQpDKslSIz0MPbmWxlrIMm0PK\u002BV1nqWBCQBHcPKAgz/DIOnYWEGQt9j8FSOb764wdXhBzg1D6UUYpggto6jsNWMpS2JlQAoSB4CoEF0s5OhD/cn4PZvMDy0ytnvJ1iaL5MkGlGq2WqxAFvChtsTR8lAub7TBlBxkiygNSCIBrUGTTSUSpDPB8RR3HSlBMQEw0JUCtGGEUarPbF2X8huevAcYCrXK9TUmkONoLU0\u002BRoaDXBdDSLNN4TZdCZplNgISkWx3yUYO0zoATapyanBkhfmVwGStaWTJjTwm9B1kLIBG0UKU1qp\u002BzN\u002BmFTrID4QAbFRLN2p\u002BGGy0NrWvafF7u5CC2sGsWxwnBL5xZVmVCwM1YJSaVZq1yrl\u002Bt2cJv5dkFvAOFAwoqgSV6q5O74Xjdkt2T2ZdG\u002BvRommOR2eV2V1uQSYGNKKiCSLpXMFP8hPaC1XRbgO3AbmgNgAiJO6LlVuzOSXx4btVNf2TKZ/h8K2lCE0XIdKuYaStA7jUpAvX5iJ4vofIsaICFeBiTh2F5aLp4NSdQTjn6GBIFwqrhYnLydadDrV1W\u002BZHdmG1xCn5mjHn6wVqtemEt0YFTEvAdeBqTCq5IvVy0EQ5gE2AgHCKO/W6nM3G0E8jTL7dGQ9VSjdqq3Wbg4i/CiizgNjwFypOlJxvFzcCObW69c/2I0SLLPbyrbt29XRfnB/GLmrWof3gGLdGfcdPxcBOgiXnyz8//U3PvwSqDnynrEAAAAASUVORK5CYII=",
+              "WhenOpened": "2025-04-26T10:18:25.929Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
