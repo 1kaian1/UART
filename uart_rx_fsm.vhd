@@ -7,27 +7,25 @@ use ieee.std_logic_unsigned.all;
 
 entity UART_RX_FSM is
     port(
-       CLK                   : in std_logic;
-       RST                   : in std_logic;
-       DIN                   : in std_logic;
-       CLK_CYCLE_CNT         : in std_logic_vector(4 downto 0);
-       CLK_CYCLE_ACTIVE      : out std_logic;
-       BIT_CNT               : in std_logic_vector(3 downto 0);
-       DATA_RECIEVE_ACTIVE   : out std_logic;
-       DATA_VALIDATE_ACTIVE  : out std_logic
+       CLK                  : in std_logic;
+       RST                  : in std_logic;
+       DIN                  : in std_logic;
+       CLK_CYCLE_CNT        : in std_logic_vector(4 downto 0);
+       CLK_CYCLE_CNT_ACTIVE : out std_logic;
+       DATA_BIT_CNT         : in std_logic_vector(3 downto 0);
+       DATA_BIT_CNT_ACTIVE  : out std_logic
     );
 end entity;
 
 architecture behavioral of UART_RX_FSM is
-    type fsm_states is (IDLE, WAIT_FOR_FIRST_BIT, READ_DATA, WAIT_FOR_STOP_BIT, VALIDATE_DATA);
+    type fsm_states is (IDLE, WAITING_FOR_FIRST_BIT, READING_DATA, WAITING_FOR_STOP_BIT);
     signal current_state : fsm_states := IDLE;
 
 begin
 
     -- ACTIVATING PORTS
-    CLK_CYCLE_ACTIVE <= '1' when current_state = WAIT_FOR_FIRST_BIT or current_state = READ_DATA or current_state = WAIT_FOR_STOP_BIT else '0';
-    DATA_VALIDATE_ACTIVE <= '1' when current_state = VALIDATE_DATA else '0';
-    DATA_RECIEVE_ACTIVE <= '1' when current_state = READ_DATA else '0';
+    CLK_CYCLE_CNT_ACTIVE <= '1' when current_state = WAITING_FOR_FIRST_BIT or current_state = READING_DATA or current_state = WAITING_FOR_STOP_BIT else '0';
+    DATA_BIT_CNT_ACTIVE <= '1' when current_state = READING_DATA else '0';
 
     -- PROCESS
     process(CLK) begin
@@ -43,24 +41,22 @@ begin
             case current_state is
                 when IDLE => 
                     if DIN = '0' then
-                        current_state <= WAIT_FOR_FIRST_BIT;
+                        current_state <= WAITING_FOR_FIRST_BIT;
                     end if;
-                when WAIT_FOR_FIRST_BIT =>
+                when WAITING_FOR_FIRST_BIT =>
                     if CLK_CYCLE_CNT = "10111" then
-                        current_state <= READ_DATA;
+                        current_state <= READING_DATA;
                     end if;
-                when READ_DATA =>
-                    if BIT_CNT = "1000" then
-                        current_state <= WAIT_FOR_STOP_BIT;
+                when READING_DATA =>
+                    if DATA_BIT_CNT = "1000" then
+                        current_state <= WAITING_FOR_STOP_BIT;
                     end if;
-                when WAIT_FOR_STOP_BIT =>
+                when WAITING_FOR_STOP_BIT =>
                     if DIN = '1' then
                         if CLK_CYCLE_CNT = "01111" then
-                            current_state <= VALIDATE_DATA;
+                            current_state <= IDLE;
                         end if;
                     end if;
-                when VALIDATE_DATA =>
-                    current_state <= IDLE;
                 when others => null;
             end case;
 
