@@ -18,7 +18,7 @@ end entity;
 
 -- Architecture implementation (INSERT YOUR IMPLEMENTATION HERE)
 architecture behavioral of UART_RX is
-    signal clk_cycle_cnt        : std_logic_vector(4 downto 0) := "00001";
+    signal clk_cycle_cnt        : std_logic_vector(4 downto 0) := "00001"; -- možná by šlo upravit pouze na 4 bity
     signal clk_cycle_cnt_active : std_logic := '0';
     signal data_bit_cnt         : std_logic_vector(3 downto 0) := "0000";
     signal data_bit_cnt_active  : std_logic := '0';
@@ -43,6 +43,7 @@ begin
         
         -- RESET
         if RST = '1' then
+
             DOUT_VLD <= '0';
             DOUT <= (others => '0');
             clk_cycle_cnt <= "00001";
@@ -51,31 +52,28 @@ begin
         -- RISING EDGE
         elsif rising_edge(CLK) then
 
+            DOUT_VLD <= '0';
+
             if clk_cycle_cnt_active = '0' then
                 clk_cycle_cnt <= "00001";
             else
                 clk_cycle_cnt <= clk_cycle_cnt + 1;
             end if;
 
-            DOUT_VLD <= '0';
-
-            if data_bit_cnt = "1000" then
-                if clk_cycle_cnt = "01111" and DIN = '1' then
-                    data_bit_cnt <= "0000";
-                    DOUT <= dout_reg;
-                    DOUT_VLD <= '1';
-                end if;
+            if data_bit_cnt = "1000" and clk_cycle_cnt = "01111" and DIN = '1' then -- možná chybka? Proč pouze "01111"? To je patnáctý bit přece.
+                data_bit_cnt <= "0000";
+                DOUT <= dout_reg;
+                DOUT_VLD <= '1';
             end if;
 
-            if data_bit_cnt_active = '1' then
-                if clk_cycle_cnt >= "10000" then
-
-                    clk_cycle_cnt <= "00001";
-                    dout_reg(conv_integer(data_bit_cnt)) <= DIN;
-                    data_bit_cnt <= data_bit_cnt + 1;
-
-                end if;
+            if data_bit_cnt_active = '1' and clk_cycle_cnt >= "10000" then
+                clk_cycle_cnt <= "00001";
+                dout_reg(conv_integer(data_bit_cnt)) <= DIN;
+                data_bit_cnt <= data_bit_cnt + 1;
             end if;
+
         end if;
-    end process; 
+
+    end process;
+
 end architecture;
