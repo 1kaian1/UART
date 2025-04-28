@@ -7,85 +7,63 @@ use ieee.std_logic_unsigned.all;
 
 entity UART_RX_FSM is
     port(
-        CLK          : in  std_logic;
-        RST          : in  std_logic;
-        VLD          : in  std_logic;
-        BIT_END      : in  std_logic;
-        WORD_END     : in  std_logic;
-        RDY          : out std_logic;
-        START        : out std_logic;
-        STOP         : out std_logic;
-        CYCLE_COUNT  : out std_logic;
-        DATA_COUNT   : out std_logic
+       CLK                   : in std_logic;
+       RST                   : in std_logic;
+       DIN                   : in std_logic;
+       CLK_CYCLE_CNT         : in std_logic_vector(4 downto 0);
+       CLK_CYCLE_ACTIVE      : out std_logic;
+       BIT_CNT               : in std_logic_vector(3 downto 0);
+       DATA_RECIEVE_ACTIVE   : out std_logic;
+       DATA_VALIDATE_ACTIVE  : out std_logic
     );
 end entity;
 
 architecture behavioral of UART_RX_FSM is
-    type state_type is (IDLE_STATE, START_STATE, DATA_STATE, STOP_STATE);
-    signal state, next_state : state_type;
+    type fsm_states is (IDLE, WAIT_FOR_FIRST_BIT, READ_DATA, WAIT_FOR_STOP_BIT, VALIDATE_DATA);
+    signal current_state : fsm_states := IDLE;
+
 begin
 
-    -- Stavový registr
-    process(CLK)
-    begin
-        if rising_edge(CLK) then
-            if RST = '1' then
-                state <= IDLE_STATE;
-            else
-                state <= next_state;
-            end if;
+    -- ACTIVATING PORTS
+    CLK_CYCLE_ACTIVE <= '1' when current_state = WAIT_FOR_FIRST_BIT or current_state = READ_DATA or current_state = WAIT_FOR_STOP_BIT else '0';
+    DATA_VALIDATE_ACTIVE <= '1' when current_state = VALIDATE_DATA else '0';
+    DATA_RECIEVE_ACTIVE <= '1' when current_state = READ_DATA else '0';
+
+    -- PROCESS
+    process(CLK) begin
+
+        -- RESET
+        if RST = '1' then
+            current_state <= IDLE;
+            
+        -- RISING EDGE
+        elsif rising_edge(CLK) then
+
+            -- HANDLE STATES
+            case current_state is
+                when IDLE => 
+                    if DIN = '0' then
+                        current_state <= WAIT_FOR_FIRST_BIT;
+                    end if;
+                when WAIT_FOR_FIRST_BIT =>
+                    if CLK_CYCLE_CNT = "10111" then
+                        current_state <= READ_DATA;
+                    end if;
+                when READ_DATA =>
+                    if BIT_CNT = "1000" then
+                        current_state <= WAIT_FOR_STOP_BIT;
+                    end if;
+                when WAIT_FOR_STOP_BIT =>
+                    if DIN = '1' then
+                        if CLK_CYCLE_CNT = "01111" then
+                            current_state <= VALIDATE_DATA;
+                        end if;
+                    end if;
+                when VALIDATE_DATA =>
+                    current_state <= IDLE;
+                when others => null;
+            end case;
+
         end if;
     end process;
-
-    -- Logika přechodů mezi stavy
-    process(state, VLD, BIT_END, WORD_END)
-    begin
-        case state is
-
-            -- Čeká na VLD pro přechod do stavu SSTART, jinak zůstává v IDLE.
-            -- Kdo mění VLD? Co indikuje? Nový bit k dispozici?
-            when IDLE_STATE =>
-                if VLD = '1' then
-                    next_state <= START_STATE;
-                else
-                    next_state <= IDLE_STATE;
-                end if;
-
-            -- Čeká na BIT_END (mid_bit) pro přechod do stavu DATA.
-            when START_STATE =>
-                if BIT_END = '1' then
-                    next_state <= DATA_STATE;
-                else
-                    next_state <= START_STATE;
-                end if;
-
-            -- Čeká na BIT_END (mid_bit) a WORD_END (flag pro konec slova) pro přechod do stavu SSTOP.
-            when DATA_STATE =>
-                if (BIT_END = '1') and (WORD_END = '1') then
-                    next_state <= STOP_STATE;
-                else
-                    next_state <= DATA_STATE;
-                end if;
-
-            -- Čeká na BIT_END pro přechod do stavu IDLE.
-            when STOP_STATE =>
-                if BIT_END = '1' then
-                    next_state <= IDLE_STATE;
-                else
-                    next_state <= STOP_STATE;
-                end if;
-
-            -- Cokoli ostatního jde do IDLE.
-            when others =>
-                next_state <= IDLE_STATE;
-        end case;
-    end process;
-
-    -- Moorovy výstupy podle aktuálního stavu
-    RDY        <= '1' when state = IDLE_STATE else '0';
-    START      <= '1' when state = START_STATE else '0';
-    CYCLE_COUNT      <= '1' when (state = START_STATE) or (state = DATA_STATE) or (state = STOP_STATE) else '0';
-    DATA_COUNT <= '1' when state = DATA_STATE else '0';
-    STOP       <= '1' when (state = STOP_STATE) or (state = IDLE_STATE) else '0';
-
 end architecture;
