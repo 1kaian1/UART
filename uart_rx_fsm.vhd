@@ -38,15 +38,28 @@ begin
 
             -- HANDLE STATES
             case current_state is
-                when IDLE => 
-                    current_state <= WAITING_FOR_FIRST_BIT when DIN = '0' else current_state;
+                when IDLE =>
+                    if DIN = '0' then
+                        current_state <= WAITING_FOR_FIRST_BIT;
+                    end if;
+                    
                 when WAITING_FOR_FIRST_BIT =>
-                    current_state <= READING_DATA when CLK_CYCLE_CNT = "10111" else current_state;
+                    if CLK_CYCLE_CNT = "10111" then
+                        current_state <= READING_DATA;
+                    end if;
+                    
                 when READING_DATA =>
-                    current_state <= WAITING_FOR_STOP_BIT when DATA_BIT_CNT = "1000" else current_state;
+                    if DATA_BIT_CNT = "1000" then
+                        current_state <= WAITING_FOR_STOP_BIT;
+                    end if;
+                    
                 when WAITING_FOR_STOP_BIT =>
-                    current_state <= IDLE when (DIN = '1' and CLK_CYCLE_CNT = "01111") else current_state;
-                when others => null;
+                    if (DIN = '1') and (CLK_CYCLE_CNT = "01111") then
+                        current_state <= IDLE;
+                    end if;
+                    
+                when others =>
+                    null;
             end case;
 
         end if;
